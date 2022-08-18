@@ -36,7 +36,7 @@ function Order() {
         if (orders.length > 0) {
             return (
                 <h1 className="text-danger display-2">
-                    Total orders:{" "}
+                    {status} orders:{" "}
                     {orders.filter((order) => order.status === status).length}
                 </h1>
             );
