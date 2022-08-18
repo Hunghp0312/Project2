@@ -8,7 +8,6 @@ function AdminRoute(props) {
         // trying to go to when they were redirected. This allows us to send them
         // along to that page after they login, which is a nicer user experience
         // than dropping them off on the home page.
-        console.log(props);
         return props.children;
     }
     return <Navigate to="/signin" state={{ from: props.location }} replace />;

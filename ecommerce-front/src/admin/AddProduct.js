@@ -32,7 +32,7 @@ function AddProduct() {
     } = values;
     useEffect(() => {
         init();
-    });
+    }, []);
     const init = () => {
         getCategories().then((data) => {
             if (data.error) {
@@ -150,8 +150,6 @@ function AddProduct() {
                                 {c.name}
                             </option>
                         ))}
-                    <option value="62d2aaceb421ecea095087dc">T-shirt</option>
-                    <option value="62d2aa34b421ecea095087d5">PHP</option>
                 </select>
             </div>
             <div className="form-group">

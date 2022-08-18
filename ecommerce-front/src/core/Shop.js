@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Layout from "./Layout";
-import CheckBox from "./CheckBox";
+import CheckBox from "../component/CheckBox";
 import { getCategories, getFilteredProduct } from "./ApiCore";
 import { prices } from "./FixedPrices";
-import RadioBox from "./RadioBox";
-import Card from "./Card";
+import RadioBox from "../component/RadioBox";
+import Card from "../component/Card";
 function Shop() {
     const [myFilters, setMyFilters] = useState({
         filters: { category: [], price: [] },
@@ -90,7 +90,7 @@ function Shop() {
             className="container-fluid"
         >
             <div className="row">
-                <div className="col-4">
+                <div className="col-3">
                     <h4>Filter by Category</h4>
                     <ul>
                         <CheckBox
@@ -110,12 +110,14 @@ function Shop() {
                         />
                     </ul>
                 </div>
-                <div className="col-8">
+                <div className="col-9">
                     <h2 className="mb-4"> Products </h2>
                     <div className="row">
                         {filteredResults &&
                             filteredResults.map((p, i) => (
-                                <Card key={i} product={p}></Card>
+                                <div className="col-4">
+                                    <Card key={i} product={p}></Card>
+                                </div>
                             ))}
                     </div>
                     <hr />

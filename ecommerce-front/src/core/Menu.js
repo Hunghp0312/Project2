@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { isAuthenticated, signout } from "../auth";
-
+import { itemTotal } from "./CartHelper";
 function Menu() {
     let navigate = useNavigate();
     return (
@@ -17,7 +17,14 @@ function Menu() {
                         Shop
                     </Link>
                 </li>
-
+                <li className="nav-item">
+                    <Link className="nav-link text-light" to="/cart">
+                        Cart{" "}
+                        <sup>
+                            <small className="cart-badge">{itemTotal()}</small>
+                        </sup>
+                    </Link>
+                </li>
                 {isAuthenticated() && isAuthenticated().user.role === 0 && (
                     <li className="nav-item">
                         <Link

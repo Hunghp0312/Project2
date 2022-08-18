@@ -7,27 +7,27 @@ export const prices = [
     },
     {
         _id: 1,
-        name: "$0 to $9",
-        array: [0, 9],
+        name: "0₫ to 300000₫",
+        array: [0, 300000],
     },
     {
         _id: 2,
-        name: "$10 to $19",
-        array: [10, 19],
+        name: "300000₫ to 600000₫",
+        array: [300000, 600000],
     },
     {
         _id: 3,
-        name: "$20 to $29",
-        array: [20, 29],
+        name: "600000₫ to 900000₫",
+        array: [600000, 900000],
     },
     {
         _id: 4,
-        name: "$30 to $39",
-        array: [30, 39],
+        name: "900000₫ to 1200000₫",
+        array: [900000, 1200000],
     },
     {
         _id: 5,
-        name: "More than $40",
-        array: [40, 99],
+        name: "More than 1500000₫",
+        array: [1200000, 1500000],
     },
 ];

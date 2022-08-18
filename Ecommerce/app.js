@@ -13,6 +13,8 @@ const authRoutes = require("./routers/auth");
 const userRoutes = require("./routers/user");
 const categoryRoutes = require("./routers/category");
 const productRoutes = require("./routers/product");
+const orderRoutes = require("./routers/order");
+const commentRoutes = require("./routers/comment");
 //app
 const app = express();
 
@@ -39,6 +41,8 @@ app.use("/api", authRoutes);
 app.use("/api", userRoutes);
 app.use("/api", categoryRoutes);
 app.use("/api", productRoutes);
+app.use("/api", orderRoutes);
+app.use("/api", commentRoutes);
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {

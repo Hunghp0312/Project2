@@ -11,6 +11,7 @@ const {
     listRelated,
     listCategories,
     listBySearch,
+    listSearch,
     photo,
 } = require("../controllers/product.js");
 const { userById } = require("../controllers/user.js");
@@ -32,6 +33,7 @@ router.put(
     isAdmin,
     update
 );
+router.get("/products/search", listSearch);
 router.get("/products", list);
 router.get("/products/related/:productId", listRelated);
 router.get("/products/categories", listCategories);
