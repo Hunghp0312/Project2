@@ -47,7 +47,7 @@ exports.remove = (req, res) => {
                 error: errorHandler(err),
             });
         }
-        res.json({ messgae: "Category deleted" });
+        res.json({ message: "Category deleted" });
     });
 };
 exports.list = (req, res) => {
