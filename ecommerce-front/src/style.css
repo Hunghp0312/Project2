@@ -15,6 +15,18 @@
     }
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+  
+input[type=number] {
+    -moz-appearance: textfield;
+    width:35px;
+    text-align: right;
+}
+
 @-webkit-keyframes Gradient {
     0% {
         background-position: 0% 50%;
@@ -57,4 +69,26 @@
     font-style: 12px;
     font-style: italic;
     background: #000;
+}
+.button{
+    font-size: 0.8rem;
+  padding: 0.2rem;
+  margin: 0.1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #404040 solid;
+  background-color: #f0c040;
+  width: 100%;
+  cursor: pointer;
+}
+.button-plus{
+    background-color: #40c0f0;
+    width: 1.5rem;
+  }
+.button-minus {
+    background-color: #f04040;
+    width: 1.5rem;
+}
+.input-count{
+    border-radius: 0.5rem;
+
 }

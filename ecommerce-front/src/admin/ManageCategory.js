@@ -37,27 +37,42 @@ function ManageCategory() {
                 <div className="col-12">
                     <h2 className="text-center">Total {categories.length}</h2>
                     <hr />
-                    <ul className="list-group">
+                    <table className="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                         {categories.map((c, i) => (
-                            <li
+                            <tr
                                 key={i}
-                                className="mb-3 list-group-item d-flex justify-content-between align-items-center"
+                                
                             >
-                                <strong>{c.name}</strong>
-                                <Link to={`/admin/category/update/${c._id}`}>
+                                <th>{c.name}</th>
+                                <td>
+                                    <Link to={`/admin/category/update/${c._id}`}>
                                     <span className="badge badge-warning badge-pill">
                                         Update
                                     </span>
-                                </Link>
-                                <span
+                                    </Link>
+                                </td>
+                                <td>
+                                    <button
                                     onClick={() => destroy(c._id)}
                                     className="badge badge-danger badge-pill"
-                                >
-                                    Delete
-                                </span>
-                            </li>
+                                    >
+                                        Delete
+                                    </button>
+                                </td>
+                                
+                            </tr>
                         ))}
-                    </ul>
+                        </tbody>
+                    </table>
+                    
                 </div>
             </div>
         </Layout>

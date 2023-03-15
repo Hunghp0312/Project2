@@ -91,19 +91,19 @@ function Footer() {
                             </h6>
                             <p>
                                 <MDBIcon icon="home" className="mr-2" />
-                                New York, NY 10012, US
+                                Ha Noi, Viet Nam
                             </p>
                             <p>
                                 <MDBIcon icon="envelope" className="mr-3" />
-                                info@example.com
+                                hoanghung31200@gmail.com
                             </p>
                             <p>
-                                <MDBIcon icon="phone" className="mr-3" /> + 01
-                                234 567 88
+                                <MDBIcon icon="phone" className="mr-3" /> + 84
+                                388 888 888
                             </p>
                             <p>
-                                <MDBIcon icon="print" className="mr-3" /> + 01
-                                234 567 89
+                                <MDBIcon icon="print" className="mr-3" /> + 84
+                                388 888 888
                             </p>
                         </MDBCol>
                     </MDBRow>

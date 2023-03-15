@@ -4,6 +4,7 @@ import { isAuthenticated } from "../auth";
 import { Link } from "react-router-dom";
 import { getProducts, deleteProduct } from "./ApiAdmin";
 import { getCategories, list } from "../core/ApiCore";
+
 function ManageProduct() {
     const [products, setProducts] = useState([]);
     const { user, token } = isAuthenticated();
@@ -92,7 +93,7 @@ function ManageProduct() {
                     className="btn input-group-append"
                     style={{ border: "none" }}
                 >
-                    <button className="input-group-text">Button</button>
+                    <button className="input-group-text">Search</button>
                 </div>
             </span>
         </form>
@@ -117,28 +118,45 @@ function ManageProduct() {
     };
     const searchedProducts = (results = []) => {
         return (
-            <ul className="list-group">
-                {results.map((p, i) => (
-                    <li
+            <table className="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Product Id</th>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {results.map((p, i) => (
+                    <tr
                         key={i}
-                        className="mb-3 list-group-item d-flex justify-content-between align-items-center"
                     >
-                        <strong>{p._id}</strong>
-                        <strong>{p.name}</strong>
-                        <Link to={`/admin/product/update/${p._id}`}>
-                            <span className="badge badge-warning badge-pill">
-                                Update
-                            </span>
-                        </Link>
-                        <span
-                            onClick={() => destroy(p._id)}
-                            className="badge badge-danger badge-pill"
-                        >
-                            Delete
-                        </span>
-                    </li>
-                ))}
-            </ul>
+                        <td>{p._id}</td>
+                        <td>{p.name}</td>
+                        <td>{p.quantity}</td>
+                        <td>                        
+                            <Link to={`/admin/product/update/${p._id}`}>
+                                <span className="badge badge-warning badge-pill">
+                                    Update
+                                </span>
+                            </Link>
+                        </td>
+
+                        <td>
+                            <button
+                                    onClick={() => destroy(p._id)}
+                                    className="badge badge-danger badge-pill"
+                                    >
+                                        Delete
+                            </button>
+                        </td>
+                    </tr>
+                    ))}
+                </tbody>
+            </table>
+ 
         );
     };
 

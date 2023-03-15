@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Layout from "./Layout";
 import { getCart, removeProduct, updateProduct } from "./CartHelper";
 import Card from "../component/Card";
+import CheckOutItem from "../component/CheckOutItem"
 import _ from "lodash";
 import CheckOut from "../component/CheckOut";
 import ShowImage from "../component/ShowImage";
@@ -19,15 +20,24 @@ function Cart(props) {
             <div>
                 <h2>Your cart has {items.length} items</h2>
                 <hr />
-                {items.map((product, i) => (
-                    <Card
-                        key={i}
-                        product={product}
-                        showAddToCartButton={false}
-                        cartUpdate={true}
-                        showRemoveProductButton={true}
-                    ></Card>
-                ))}
+                <table className="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>PRODUCT DETAILS</th>
+                            <th>QUANTITY</th>
+                            <th>TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {items.map((product, i) => (
+                        <CheckOutItem
+                            key={i}
+                            product={product}
+                        ></CheckOutItem>
+                    ))}
+                    </tbody>
+                </table>
+
             </div>
         );
     };
@@ -44,11 +54,11 @@ function Cart(props) {
             className="container-fluid"
         >
             <div className="row">
-                <div className="col-6">
+                <div className="col-9">
                     {items.length > 0 ? showItems(items) : noItemMessage()}
                 </div>
 
-                <div className="col-6">
+                <div className="col-3">
                     <h2>Your Checkout</h2>
                     <CheckOut products={items}></CheckOut>
                 </div>

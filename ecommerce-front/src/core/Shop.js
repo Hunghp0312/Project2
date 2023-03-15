@@ -115,7 +115,7 @@ function Shop() {
                     <div className="row">
                         {filteredResults &&
                             filteredResults.map((p, i) => (
-                                <div className="col-4">
+                                <div className="col-4 d-flex align-items-stretch ">
                                     <Card key={i} product={p}></Card>
                                 </div>
                             ))}
